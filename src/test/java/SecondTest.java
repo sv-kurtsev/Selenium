@@ -2,6 +2,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
@@ -17,15 +18,15 @@ public class SecondTest {
 
     @BeforeClass
     public void beforeClass() {
-        WebDriverManager.firefoxdriver().setup();
-        webDriver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+        webDriver = new ChromeDriver();
         webDriver.get("https://www.i.ua/");
     }
 
     @Test
     public void test() {
         webDriver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-        webDriver.manage().window().maximize();
+//        webDriver.manage().window().maximize();
         WebElement loginForm = webDriver.findElement(By.xpath("//input[@name='login']"));
         loginForm.click();
         loginForm.sendKeys("selenium");
