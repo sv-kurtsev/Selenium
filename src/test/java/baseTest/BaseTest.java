@@ -24,8 +24,8 @@ public class BaseTest {
 
     }
 
-//    @AfterMethod
-//    public void deleteDriver() {
-//        webDriver.close();
-//    }
+    @AfterMethod
+    public void deleteDriver() {
+        webDriver.close();
+    }
 }
