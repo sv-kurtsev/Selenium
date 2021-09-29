@@ -13,16 +13,15 @@ public interface LocatorsInterface {
     By youDontKnowJSDemoQA = By.xpath("//a[contains(text(), 'You Don')]");
     By profileButtonDemoQA = By.xpath("//li[span='Profile']");
     By deleteAllBooksButtonDemoQA = By.xpath("(//button[contains(text(), 'Delete All Books')])[1]");
-    By closAdvertiseDemoQA = By.xpath("//img[@title='Ad.Plus Advertising']");
     By confirmModalButtonDemoQA = By.xpath("id('closeSmallModal-ok')");
     By firstBookRowDemoQA = By.xpath("//div[@class='rt-td']");
 
-    By userNameSaucedemo = By.xpath("id('user-name')");
-    By passwordSaucedemo = By.xpath("id('password')");
-    By loginButtonSaucedemo = By.xpath("id('login-button')");
-    By addToCartButtonSaucedemo = By.xpath("//button[text()='Add to cart']");
-    By cartIconSaucedemo = By.xpath("//a[@class='shopping_cart_link']");
-    By checkoutButtonSaucedemo = By.xpath("//button[@id='checkout']");
+    By userNameSauceDemo = By.xpath("id('user-name')");
+    By passwordSauceDemo = By.xpath("id('password')");
+    By loginButtonSauceDemo = By.xpath("id('login-button')");
+    By addToCartButtonSauceDemo = By.xpath("//button[text()='Add to cart']");
+    By cartIconSauceDemo = By.xpath("//a[@class='shopping_cart_link']");
+    By checkoutButtonSauceDemo = By.xpath("//button[@id='checkout']");
     By firstNameFieldSauceDemo = By.xpath("//input[@id='first-name']");
     By lastNameFieldSauceDemo = By.xpath("id('last-name')");
     By zipCodeSauceDemo = By.xpath("id('postal-code')");
@@ -30,14 +29,14 @@ public interface LocatorsInterface {
     By finishButtonSauceDemo = By.xpath("id('finish')");
     By backToHomeButtonSauceDemo = By.xpath("id('back-to-products')");
 
-    By newToDoFieldWebdriveruniversity = By.xpath("//input[@placeholder='Add new todo']");
-    By practiceMagicTextWebdriveruniversity = By.xpath("//*[text()=' Practice magic']");
-    By buyNewRobesTextWebdriveruniversity = By.xpath("//*[text()=' Buy new robes']");
-    By buyNewRobesDeleteIconWebdriveruniversity = By.xpath("(//i[@class='fa fa-trash'])[2]");
+    By newToDoFieldWebDriverUniversity = By.xpath("//input[@placeholder='Add new todo']");
+    By practiceMagicTextWebDriverUniversity = By.xpath("//*[text()=' Practice magic']");
+    By buyNewRobesTextWebDriverUniversity = By.xpath("//*[text()=' Buy new robes']");
+    By buyNewRobesDeleteIconWebDriverUniversity = By.xpath("(//i[@class='fa fa-trash'])[2]");
 
     By todaysDealsButtonAmazon = By.xpath("(//a[contains(text(), 'Today')])");
     By firstProductAmazon = By.xpath("//*[@aria-label='Deals grid']//img");
-    By popUpDissmissButtonAmazon = By.xpath("//input[@data-action-type='DISMISS']");
+    By popUpDismissButtonAmazon = By.xpath("//input[@data-action-type='DISMISS']");
     By firstSubProductButtonAmazon = By.xpath("(//*[@class='a-carousel-col a-carousel-center']//img)[1]");
     By addToCartButtonAmazon = By.xpath("id('add-to-cart-button')");
     By proceedToCheckOutButtonAmazon = By.xpath("//input[@aria-labelledby='attach-sidesheet-checkout-button-announce']");

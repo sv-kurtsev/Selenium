@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Tests3 extends BaseTest implements LocatorsInterface {
     @Test
-    public void demoqa() {
+    public void demoQa() {
         webDriver.get("https://demoqa.com/login");
         webDriver.manage().window().maximize();
         WebElement userNameField = webDriver.findElement(userNameFieldDemoQA);
@@ -23,86 +23,77 @@ public class Tests3 extends BaseTest implements LocatorsInterface {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(loginButtonDemoQA));
         WebElement loginButton = webDriver.findElement(loginButtonDemoQA);
         loginButton.click();
-        Actions actions = new Actions(webDriver);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(goToBookStoreButtonDemoQA));
-
         WebElement goToBookStoreButton = webDriver.findElement(goToBookStoreButtonDemoQA);
-        actions.moveToElement(goToBookStoreButton).build().perform();
-
         JavascriptExecutor jse = (JavascriptExecutor) webDriver;
-        jse.executeScript("window.scrollBy(0, 1000)", "");
-
-        WebElement closAdvertise = webDriver.findElement(closAdvertiseDemoQA);
-        closAdvertise.click();
-
-        goToBookStoreButton.click();
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(gitPocketGuideDemoQA));
+        jse.executeScript("arguments[0].click();", goToBookStoreButton);
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(gitPocketGuideDemoQA));
         WebElement gitPocketGuide = webDriver.findElement(gitPocketGuideDemoQA);
         gitPocketGuide.click();
-        jse.executeScript("window.scrollBy(0, 1000)", "");
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(addToYourCollectionButtonDemoQA));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(addToYourCollectionButtonDemoQA));
         WebElement addToYourCollectionButton = webDriver.findElement(addToYourCollectionButtonDemoQA);
-        addToYourCollectionButton.click();
-        webDriverWait.until(ExpectedConditions.alertIsPresent());
-        webDriver.switchTo().alert().accept();
+        jse.executeScript("arguments[0].click();", addToYourCollectionButton);
+        try {
+            webDriverWait.until(ExpectedConditions.alertIsPresent());
+            webDriver.switchTo().alert().accept();
+            webDriver.switchTo().defaultContent();
+        } catch (Exception e) {
 
-        jse.executeScript("window.scrollBy(0, 1000)", "");
+        }
         WebElement backToBookStoreButton = webDriver.findElement(backToBookStoreButtonDemoQA);
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(backToBookStoreButton));
-        actions.moveToElement(backToBookStoreButton);
-        backToBookStoreButton.click();
+        webDriverWait.until(ExpectedConditions.visibilityOf(backToBookStoreButton));
+        jse.executeScript("arguments[0].click();", backToBookStoreButton);
         webDriverWait.until(ExpectedConditions.elementToBeClickable(youDontKnowJSDemoQA));
         WebElement youDontKnowJS = webDriver.findElement(youDontKnowJSDemoQA);
-        jse.executeScript("window.scrollBy(0, 1000)", "");
-        youDontKnowJS.click();
-        jse.executeScript("window.scrollBy(0, 1000)", "");
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(addToYourCollectionButtonDemoQA));
+        jse.executeScript("arguments[0].click();", youDontKnowJS);
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(addToYourCollectionButtonDemoQA));
         addToYourCollectionButton = webDriver.findElement(addToYourCollectionButtonDemoQA);
-        addToYourCollectionButton.click();
-        webDriverWait.until(ExpectedConditions.alertIsPresent());
-        webDriver.switchTo().alert().accept();
-        jse.executeScript("window.scrollBy(0, 1000)", "");
+        jse.executeScript("arguments[0].click();", addToYourCollectionButton);
+        try {
+            webDriverWait.until(ExpectedConditions.alertIsPresent());
+            webDriver.switchTo().alert().accept();
+            webDriver.switchTo().defaultContent();
+        } catch (Exception e) {
+
+        }
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(profileButtonDemoQA));
         WebElement profileButton = webDriver.findElement(profileButtonDemoQA);
-        profileButton.click();
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(deleteAllBooksButtonDemoQA));
+        jse.executeScript("arguments[0].click();", profileButton);
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(deleteAllBooksButtonDemoQA));
         WebElement deleteAllBooksButton = webDriver.findElement(deleteAllBooksButtonDemoQA);
-        closAdvertise = webDriver.findElement(closAdvertiseDemoQA);
-        closAdvertise.click();
-        jse.executeScript("window.scrollBy(0, 2000)", "");
-        actions.moveToElement(deleteAllBooksButton);
-        deleteAllBooksButton.click();
+        jse.executeScript("arguments[0].click();", deleteAllBooksButton);
         WebElement confirmModalButton = webDriver.findElement(confirmModalButtonDemoQA);
         confirmModalButton.click();
         webDriverWait.until(ExpectedConditions.alertIsPresent());
         webDriver.switchTo().alert().accept();
+        webDriver.switchTo().defaultContent();
         WebElement firstBookRow = webDriver.findElement(firstBookRowDemoQA);
-        Assert.assertTrue(firstBookRow.getText().equals(" "));
+        Assert.assertEquals(firstBookRow.getText(), " ");
 
     }
 
     @Test
-    public void saucedemo() {
+    public void sauceDemo() {
         webDriver.get("https://www.saucedemo.com/");
-        WebElement userName = webDriver.findElement(userNameSaucedemo);
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(userNameSaucedemo));
+        WebElement userName = webDriver.findElement(userNameSauceDemo);
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(userNameSauceDemo));
         userName.sendKeys("standard_user");
-        WebElement password = webDriver.findElement(passwordSaucedemo);
+        WebElement password = webDriver.findElement(passwordSauceDemo);
         password.sendKeys("secret_sauce");
-        WebElement loginButton = webDriver.findElement(loginButtonSaucedemo);
+        WebElement loginButton = webDriver.findElement(loginButtonSauceDemo);
         loginButton.click();
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(addToCartButtonSaucedemo));
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(addToCartButtonSauceDemo));
         int i = 1;
         while (i < 5) {
             WebElement addToCartButton = webDriver.findElement(By.xpath("(//button[text()='Add to cart'])"));
             addToCartButton.click();
             i++;
         }
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(cartIconSaucedemo));
-        WebElement cartIcon = webDriver.findElement(cartIconSaucedemo);
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(cartIconSauceDemo));
+        WebElement cartIcon = webDriver.findElement(cartIconSauceDemo);
         cartIcon.click();
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(checkoutButtonSaucedemo));
-        WebElement checkoutButton = webDriver.findElement(checkoutButtonSaucedemo);
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(checkoutButtonSauceDemo));
+        WebElement checkoutButton = webDriver.findElement(checkoutButtonSauceDemo);
         checkoutButton.click();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(firstNameFieldSauceDemo));
         WebElement firstNameField = webDriver.findElement(firstNameFieldSauceDemo);
@@ -124,47 +115,39 @@ public class Tests3 extends BaseTest implements LocatorsInterface {
     }
 
     @Test
-    public void webdriveruniversity() {
+    public void webDriverUniversity() {
         webDriver.get("http://webdriveruniversity.com/To-Do-List/index.html");
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(newToDoFieldWebdriveruniversity));
-        WebElement newToDoField = webDriver.findElement(newToDoFieldWebdriveruniversity);
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(newToDoFieldWebDriverUniversity));
+        WebElement newToDoField = webDriver.findElement(newToDoFieldWebDriverUniversity);
         newToDoField.sendKeys("MAKE HOMEWORK");
         newToDoField.sendKeys(Keys.ENTER);
         newToDoField.sendKeys("Practice Automation \n");
-        WebElement practiceMagicText = webDriver.findElement(practiceMagicTextWebdriveruniversity);
+        WebElement practiceMagicText = webDriver.findElement(practiceMagicTextWebDriverUniversity);
         practiceMagicText.click();
-        WebElement buyNewRobesText = webDriver.findElement(buyNewRobesTextWebdriveruniversity);
+        WebElement buyNewRobesText = webDriver.findElement(buyNewRobesTextWebDriverUniversity);
         Actions actions = new Actions(webDriver);
         actions.moveToElement(buyNewRobesText);
-        WebElement buyNewRobesDeleteIcon = webDriver.findElement(buyNewRobesDeleteIconWebdriveruniversity);
+        WebElement buyNewRobesDeleteIcon = webDriver.findElement(buyNewRobesDeleteIconWebDriverUniversity);
         actions.moveToElement(buyNewRobesDeleteIcon);
         buyNewRobesDeleteIcon.click();
         List<WebElement> toDoListItems = webDriver.findElements(By.xpath("//li"));
         for (WebElement w :
                 toDoListItems) {
-            Assert.assertFalse(w.getText().equals(" Buy new robes"));
+            Assert.assertNotEquals(w.getText(), " Buy new robes");
         }
-
-
     }
 
     @Test
     public void amazon() {
         webDriver.get("https://www.amazon.com/");
         webDriver.manage().window().maximize();
-//        WebElement popUpDissmissButton = null;
         try {
-            webDriverWait.until(ExpectedConditions.elementToBeClickable(popUpDissmissButtonAmazon));
-
-            WebElement popUpDissmissButton = webDriver.findElement(popUpDissmissButtonAmazon);
-            popUpDissmissButton.click();
-
-        } catch (NoSuchElementException e) {
-
-        } catch (TimeoutException e) {
+            webDriverWait.until(ExpectedConditions.elementToBeClickable(popUpDismissButtonAmazon));
+            WebElement popUpDismissButton = webDriver.findElement(popUpDismissButtonAmazon);
+            popUpDismissButton.click();
+        } catch (Exception e) {
 
         }
-
         WebElement todaysDealsButton = webDriver.findElement(todaysDealsButtonAmazon);
         webDriverWait.until(ExpectedConditions.elementToBeClickable(todaysDealsButton));
         todaysDealsButton.click();
@@ -182,7 +165,5 @@ public class Tests3 extends BaseTest implements LocatorsInterface {
         proceedToCheckOutButton.click();
         WebElement signInPageH1 = webDriver.findElement(signInPageH1Amazon);
         Assert.assertEquals(signInPageH1.getText(), "Sign-In");
-
     }
-
 }
