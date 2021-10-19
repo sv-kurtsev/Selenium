@@ -14,6 +14,7 @@ public class AddCommentToArticlePageFactory extends BaseTest {
         certainArticlePageFactory.scrollToCommentForm();
         certainArticlePageFactory.fillCommentField("TestName", "test@gmail.com", "www.bbc.com", "Some comment");
         certainArticlePageFactory.submitCommentForm();
+        allureLog("Adding a comment to an article ");
     }
 
 

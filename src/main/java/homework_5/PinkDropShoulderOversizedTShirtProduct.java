@@ -13,6 +13,30 @@ public class PinkDropShoulderOversizedTShirtProduct extends BasePage {
     private final By addToCartButtonDemoQA = By.xpath("//button[text()='Add to cart']");
     private final By cartIconDemoQA = By.xpath("//*[@class='cart-name-and-total']");
 
+    public By getPinkDropShoulderOversizedTShirtProduct() {
+        return pinkDropShoulderOversizedTShirtProduct;
+    }
+
+    public By getProductColorDropDown() {
+        return productColorDropDown;
+    }
+
+    public By getProductSizeDropDown() {
+        return productSizeDropDown;
+    }
+
+    public By getProductQuantityInputField() {
+        return productQuantityInputField;
+    }
+
+    public By getAddToCartButtonDemoQA() {
+        return addToCartButtonDemoQA;
+    }
+
+    public By getCartIconDemoQA() {
+        return cartIconDemoQA;
+    }
+
     public PinkDropShoulderOversizedTShirtProduct(WebDriver driver) {
         super(driver);
     }
@@ -31,8 +55,8 @@ public class PinkDropShoulderOversizedTShirtProduct extends BasePage {
     }
 
     public void setAllProductSettings(String color, String size, String quantity) {
-        setColorInDropDown(productColorDropDown, color);
-        setSizeInDropDown(productSizeDropDown, size);
+        setColorInDropDown(getProductColorDropDown(), color);
+        setSizeInDropDown(getProductSizeDropDown(), size);
         setProductQuantityInputField(quantity);
     }
 
@@ -41,26 +65,29 @@ public class PinkDropShoulderOversizedTShirtProduct extends BasePage {
     }
 
     public void addProductToCart() {
-        click(addToCartButtonDemoQA);
+        click(getAddToCartButtonDemoQA());
     }
 
     public void scrollToCartIcon() {
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(cartIconDemoQA));
+//        JavascriptExecutor jse = (JavascriptExecutor) driver;
+//        jse.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(cartIconDemoQA));
+        javaScriptScrollToElement(getCartIconDemoQA());
     }
 
     public void isCartIconPresent() {
-        isElementPresentWithWait(cartIconDemoQA, 10);
+        isElementPresentWithWait(getCartIconDemoQA(), 10);
     }
 
     public void openCartPage() {
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].click();", driver.findElement(cartIconDemoQA));
+//        JavascriptExecutor jse = (JavascriptExecutor) driver;
+//        jse.executeScript("arguments[0].click();", driver.findElement(cartIconDemoQA));
+        javaScriptClick(getCartIconDemoQA());
     }
 
     public void scrollToPinkDropShoulderOversizedTShirtProduct() {
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(pinkDropShoulderOversizedTShirtProduct));
+//        JavascriptExecutor jse = (JavascriptExecutor) driver;
+//        jse.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(pinkDropShoulderOversizedTShirtProduct));
+        javaScriptScrollToElement(getPinkDropShoulderOversizedTShirtProduct());
     }
 
     public void isPinkDropShoulderOversizedTShirtProductPresent() {

@@ -1,5 +1,6 @@
 package homework_5;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,13 +13,18 @@ public class BasePageFactory {
     public WebDriver driver;
 
     @FindBy(xpath = "//a[@class='noo-search']")
-    public WebElement searchIcon;
+    private WebElement searchIcon;
 
     @FindBy(xpath = "//input[@type='search']")
-    public WebElement searchInput;
+    private WebElement searchInput;
 
-    @FindBy(xpath = "//option[text()='37']")
-    public WebElement size37;
+    public WebElement getSearchIcon() {
+        return searchIcon;
+    }
+
+    public WebElement getSearchInput() {
+        return searchInput;
+    }
 
     public BasePageFactory(WebDriver driver) {
         this.driver = driver;
@@ -30,4 +36,26 @@ public class BasePageFactory {
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    public void click(WebElement element) {
+        element.click();
+    }
+
+    public void javaScriptClick(WebElement element) {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].click();", element);
+    }
+
+    public void javaScriptScrollToElement(WebElement element) {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public void fillInput(WebElement element, String value) {
+        element.sendKeys(value);
+    }
+
+    public void isElementClickableWithWait(WebElement element, int timeWait) {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, timeWait);
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
+    }
 }

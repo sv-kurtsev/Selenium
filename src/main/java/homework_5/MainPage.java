@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class MainPage extends BasePage {
 
-    private final By tokyoTalkiesDemoQA = By.xpath("//a[@href='http://shop.demoqa.com/product/tokyo-talkies/']");
+    private final By tokyoTalkiesDemoQA = By.xpath("//a[@href='https://shop.demoqa.com/product/tokyo-talkies/']");
     private final By tokyoTalkiesAddToWishListIconDemoQA = By.xpath("//*[@data-original-product-id='704']");
     private final By myWishlistIcon = By.xpath("//a[text()='My Wishlist']");
     private final By pinkDropShoulderOversizedTShirtProductOnMainPageDemoQA = By.xpath("//a[contains(text(), 'pink drop shoulder oversized')]");
@@ -17,8 +17,9 @@ public class MainPage extends BasePage {
     }
 
     public void scrollDownToTokyoTalkiesProduct() {
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(tokyoTalkiesDemoQA));
+//        JavascriptExecutor jse = (JavascriptExecutor) driver;
+//        jse.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(tokyoTalkiesDemoQA));
+        javaScriptScrollToElement(tokyoTalkiesDemoQA);
     }
 
     public void isTokyoTalkiesProductPresent() {
@@ -26,8 +27,9 @@ public class MainPage extends BasePage {
     }
 
     public void addToWishListTokyoTalkiesProductJS() {
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].click();", driver.findElement(tokyoTalkiesAddToWishListIconDemoQA));
+//        JavascriptExecutor jse = (JavascriptExecutor) driver;
+//        jse.executeScript("arguments[0].click();", driver.findElement(tokyoTalkiesAddToWishListIconDemoQA));
+        javaScriptClick(tokyoTalkiesAddToWishListIconDemoQA);
     }
 
     public void openWishlist() {
@@ -39,13 +41,15 @@ public class MainPage extends BasePage {
     }
 
     public void javaScriptScrollDownPinkDropShoulderOversizedTShirtProduct() {
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(pinkDropShoulderOversizedTShirtProductOnMainPageDemoQA));
+//        JavascriptExecutor jse = (JavascriptExecutor) driver;
+//        jse.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(pinkDropShoulderOversizedTShirtProductOnMainPageDemoQA));
+        javaScriptScrollToElement(pinkDropShoulderOversizedTShirtProductOnMainPageDemoQA);
     }
 
     public void javaScriptClickPinkDropShoulderOversizedTShirtProduct() {
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].click();", driver.findElement(pinkDropShoulderOversizedTShirtProductOnMainPageDemoQA));
+//        JavascriptExecutor jse = (JavascriptExecutor) driver;
+//        jse.executeScript("arguments[0].click();", driver.findElement(pinkDropShoulderOversizedTShirtProductOnMainPageDemoQA));
+        javaScriptClick(pinkDropShoulderOversizedTShirtProductOnMainPageDemoQA);
     }
 
     public void isPinkDropShoulderOversizedTShirtProductPresent() {

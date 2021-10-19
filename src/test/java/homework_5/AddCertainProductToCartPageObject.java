@@ -20,6 +20,7 @@ public class AddCertainProductToCartPageObject extends BaseTest {
         pinkDropShoulderOversizedTShirtProduct.openCartPage();
         pinkDropShoulderOversizedTShirtProduct.scrollToPinkDropShoulderOversizedTShirtProduct();
         pinkDropShoulderOversizedTShirtProduct.isPinkDropShoulderOversizedTShirtProductPresent();
+        allureLog("Adding of certain product to the cart");
     }
 
 }

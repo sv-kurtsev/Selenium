@@ -15,5 +15,6 @@ public class AddingToWishListDemoQAPageObject extends BaseTest {
         mainPage.openWishlist();
         mainPage.scrollDownToTokyoTalkiesProduct();
         mainPage.isTokyoTalkiesProductPresent();
+        allureLog("Adding to wishlist of a specific product");
     }
 }

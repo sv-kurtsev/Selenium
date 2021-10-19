@@ -7,11 +7,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CartPageFactory extends BasePageFactory {
     @FindBy(xpath = "(//td[@class='product-name']/a)[1]")
-    public WebElement firstProductInCart;
-
+    private WebElement firstProductInCart;
 
     public CartPageFactory(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
+    }
+
+    public WebElement getFirstProductInCart() {
+        return firstProductInCart;
     }
 }
